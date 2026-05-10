@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>Kareem & Aya - Wedding Invitation</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- PAGE 1 · LOADING SCREEN -->
+    <section id="page-loading" class="page active">
+      <div class="loading-bg"></div>
+      <div class="particles" id="particles"></div>
+      <div class="loading-content">
+        <div class="crest-wrapper">
+          <div class="crest-glow"></div>
+          <img id="crest-img" class="crest-img" alt="Royal Crest" />
+        </div>
+        <div class="loading-bar-wrap">
+          <div class="loading-bar" id="loading-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2 · DOOR SCENE -->
+    <section id="page-door" class="page">
+      <div class="door-static-bg"></div>
+      <div class="door-bg-wrap">
+        <video
+          id="door-gif"
+          class="door-gif"
+          autoplay
+          muted
+          playsinline
+        ></video>
+        <div class="door-overlay" id="door-overlay"></div>
+        <div class="door-glow-ring" id="door-glow-ring"></div>
+      </div>
+      <div class="door-top-text">
+        <p class="door-pre en-text">Together with their families</p>
+        <p class="door-pre ar-text">بمشاركة عائلتيهما</p>
+        <p class="door-names-hero">
+          <span class="groom-name-en"></span>
+          <span class="amp-hero">&amp;</span>
+          <span class="bride-name-en"></span>
+        </p>
+        <p
+          class="door-names-hero ar-text"
+          style="font-family: &quot;Amiri&quot;, serif"
+        >
+          <span class="groom-name-ar"></span>
+          <span class="amp-hero">&amp;</span>
+          <span class="bride-name-ar"></span>
+        </p>
+        <p class="door-subtitle en-text">
+          invite you to open the door to their celebration
+        </p>
+        <p class="door-subtitle ar-text">يدعوانكم لفتح باب الاحتفال</p>
+      </div>
+      <button id="knock-btn" class="knock-btn" aria-label="Knock">
+        <span class="knock-emoji">🚪</span>
+        <span class="knock-label en-text">Knock</span>
+        <span class="knock-label ar-text">إطرق</span>
+      </button>
+      <div class="lang-toggle-wrap door-lang">
+        <button id="lang-btn-door" class="lang-btn">العربية / EN</button>
+      </div>
+    </section>
+
+    <!-- PAGE 3 · WEDDING DETAILS + RSVP -->
+    <section id="page-details" class="page">
+      <div class="details-bg"></div>
+      <div class="petals-wrap" id="petals"></div>
+
+      <div class="lang-toggle-wrap details-lang floating-lang">
+        <button id="lang-btn-details" class="lang-btn">العربية / EN</button>
+      </div>
+
+      <!-- Hero Invitation Text -->
+      <div class="details-hero">
+        <div class="hero-crest-mini">
+          <img id="hero-crest-img" alt="Crest" />
+        </div>
+        <p class="invite-pre en-text">
+          <br /><br /><br />Together with their families
+        </p>
+        <p class="invite-pre ar-text">بمشاركة عائلتيهما</p>
+        <div class="hero-names">
+          <span class="name-left en-text groom-name-en"></span>
+          <span class="name-left ar-text groom-name-ar"></span>
+          <span class="ampersand">&amp;</span>
+          <span class="name-right en-text bride-name-en"></span>
+          <span class="name-right ar-text bride-name-ar"></span>
+        </div>
+        <p class="invite-body en-text">
+          invite you to the celebration of their Katb El-Ketab
+        </p>
+        <p class="invite-body ar-text">يدعوانكم للاحتفال كتب كتابهما</p>
+        <div class="ornament-line">
+          <span></span>
+          <div class="diamond-sm">◆</div>
+          <span></span>
+        </div>
+        <p class="hero-event en-text">Katb El-Ketab</p>
+        <p class="hero-event ar-text">كتب الكتاب</p>
+      </div>
+
+      <!-- Event Detail Cards (كل معلومة في بطاقة منفصلة) -->
+      <div class="details-cards">
+        <!-- Date Card with Countdown Timer -->
+        <div class="detail-card" style="--delay: 0.1s">
+          <div class="card-label en-text">Date</div>
+          <div class="card-label ar-text">التاريخ</div>
+          <div class="card-value en-text wedding-date-en"></div>
+          <div class="card-value ar-text wedding-date-ar"></div>
+          <!-- COUNTDOWN TIMER (new) -->
+          <div class="countdown-container">
+            <div class="countdown-timer" id="countdown-timer">
+              <div class="countdown-block">
+                <span class="countdown-number" id="countdown-days">00</span>
+                <span class="countdown-label en-text">Days</span>
+                <span class="countdown-label ar-text">أيام</span>
+              </div>
+              <div class="countdown-block">
+                <span class="countdown-number" id="countdown-hours">00</span>
+                <span class="countdown-label en-text">Hours</span>
+                <span class="countdown-label ar-text">ساعات</span>
+              </div>
+              <div class="countdown-block">
+                <span class="countdown-number" id="countdown-minutes">00</span>
+                <span class="countdown-label en-text">Minutes</span>
+                <span class="countdown-label ar-text">دقائق</span>
+              </div>
+              <div class="countdown-block">
+                <span class="countdown-number" id="countdown-seconds">00</span>
+                <span class="countdown-label en-text">Seconds</span>
+                <span class="countdown-label ar-text">ثواني</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Time Card -->
+        <div class="detail-card" style="--delay: 0.2s">
+          <div class="card-icon">🕖</div>
+          <div class="card-label en-text">Time</div>
+          <div class="card-label ar-text">الوقت</div>
+          <h4>صلاة العصر</h4>
+          <div class="card-value wedding-time"></div>
+        </div>
+        <!-- Venue Card -->
+        <div class="detail-card" style="--delay: 0.3s">
+          <div class="card-icon">🕌</div>
+          <div class="card-label en-text">Venue</div>
+          <div class="card-label ar-text">المكان</div>
+          <div class="card-value en-text wedding-location-en"></div>
+          <div class="card-value ar-text wedding-location-ar"></div>
+          <br /><br />
+          <a href="#" target="_blank" class="map-btn wedding-map-btn en-text"
+            >🗺 View Location</a
+          >
+          <a href="#" target="_blank" class="map-btn wedding-map-btn ar-text"
+            >🗺 عرض الموقع</a
+          >
+          <br />
+          <br />
+        </div>
+      </div>
+
+      <!-- COUPLE PHOTO SECTION (elegant frame) -->
+      <div class="couple-photo-section">
+        <div class="photo-ornament">
+          <span></span>
+          <div class="diamond-sm">✦</div>
+          <span></span>
+        </div>
+        <div class="couple-photo-frame">
+          <img id="couple-photo-img" class="couple-photo" alt="Kareem & Aya" />
+        </div>
+        <div class="photo-caption en-text">Our Blessed Day</div>
+        <div class="photo-caption ar-text">يومنا المبارك</div>
+      </div>
+
+      <!-- RSVP Divider -->
+      <div class="section-divider">
+        <span></span>
+        <span class="div-text en-text">RSVP</span>
+        <span class="div-text ar-text">تأكيد الحضور</span>
+        <span></span>
+      </div>
+
+      <!-- RSVP Form -->
+      <div class="rsvp-wrap">
+        <form id="rsvp-form" class="rsvp-form">
+          <div class="form-group">
+            <label class="en-text" for="rsvp-name">Full Name</label>
+            <label class="ar-text" for="rsvp-name">الاسم الكامل</label>
+            <input
+              type="text"
+              id="rsvp-name"
+              class="form-input"
+              placeholder="Your name..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="en-text">Attendance</label>
+            <label class="ar-text">الحضور</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="attend" value="yes" />
+                <span class="radio-custom"></span>
+                <span class="en-text">Yes, I'll be there 🥂</span>
+                <span class="ar-text">نعم، سأحضر 🥂</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="attend" value="no" />
+                <span class="radio-custom"></span>
+                <span class="en-text">Regretfully unable to attend</span>
+                <span class="ar-text">آسف، لن أتمكن من الحضور</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="en-text" for="rsvp-msg"
+              >Message <em>(optional)</em></label
+            >
+            <label class="ar-text" for="rsvp-msg"
+              >رسالة <em>(اختياري)</em></label
+            >
+            <textarea
+              id="rsvp-msg"
+              class="form-input"
+              rows="3"
+              placeholder="Your warm wishes..."
+            ></textarea>
+          </div>
+          <button type="submit" class="rsvp-submit">
+            <span class="en-text">✉ Send RSVP</span>
+            <span class="ar-text">✉ إرسال</span>
+          </button>
+        </form>
+
+        <div id="rsvp-success" class="rsvp-success hidden">
+          <div class="success-icon">💌</div>
+          <p class="en-text">
+            Thank you! Your response has been recorded.<br />Please confirm your
+            attendance via WhatsApp to both the groom and the bride:
+          </p>
+          <p class="ar-text">
+            شكراً لك! تم تسجيل ردك.<br />يرجى تأكيد الحضور عبر واتساب للعريس
+            والعروس:
+          </p>
+          <div class="whatsapp-buttons">
+            <button id="send-to-groom" class="whatsapp-btn groom-btn">
+              <span class="en-text">📱 Send to Groom</span>
+              <span class="ar-text">📱 إرسال للعريس</span>
+            </button>
+            <button id="send-to-bride" class="whatsapp-btn bride-btn">
+              <span class="en-text">📱 Send to Bride</span>
+              <span class="ar-text">📱 إرسال للعروس</span>
+            </button>
+            <button id="copy-message" class="whatsapp-btn copy-btn">
+              <span class="en-text">📋 Copy message</span>
+              <span class="ar-text">📋 نسخ الرسالة</span>
+            </button>
+          </div>
+          <p class="en-text small-note">
+            After sending to one, please return to this page and send to the
+            other.
+          </p>
+          <p class="ar-text small-note">
+            بعد الإرسال لأحدهما، ارجع إلى هذه الصفحة وأرسل للآخر.
+          </p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="ornament-line">
+          <span></span>
+          <div class="diamond-sm">◆</div>
+          <span></span>
+        </div>
+        <p class="footer-text en-text">
+          <span class="groom-name-en"></span> &amp;
+          <span class="bride-name-en"></span> ·
+          <span class="wedding-year"></span>
+        </p>
+        <p class="footer-text ar-text">
+          <span class="groom-name-ar"></span> و
+          <span class="bride-name-ar"></span> ·
+          <span class="wedding-year-ar"></span>
+        </p>
+      </footer>
+    </section>
+
+    <audio id="bg-music" loop></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
